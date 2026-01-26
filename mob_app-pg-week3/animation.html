@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Week 3</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    .container {
+        position: relative;
+        width: 120px;
+        height: 520px;
+        margin: 30px auto;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        border: 2px solid black;
+        background: lightblue;
+        left: 0;
+    }
+
+    h1 {
+        margin: 0;
+        line-height: 100px;
+        color: white;
+    }
+
+    button {
+        padding: 10px 25px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+</style>
+
+<script>
+$(document).ready(function () {
+
+    var boxes = [
+        $("#div1"),
+        $("#div2"),
+        $("#div3"),
+        $("#div4")
+    ];
+
+    var positions = [0, 120, 240, 360]; 
+    var colors = ["red", "yellow", "pink", "black"];
+
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].css("top", positions[i] + "px");
+    }
+
+    $("#startBtn").click(function () {
+        positions.sort(() => Math.random() - 0.5);
+
+        for (let i = 0; i < boxes.length; i++) {
+            boxes[i]
+                .css("background", colors[i])
+                .animate({ top: positions[i], opacity: 0.5 }, 1000)
+                .animate({ opacity: 1 }, 200);
+        }
+    });
+
+});
+</script>
+</head>
+
+<body>
+
+<h2>Shuffle Animation</h2>
+
+<div class="container">
+    <div class="box" id="div1"><h1>1</h1></div>
+    <div class="box" id="div2"><h1>2</h1></div>
+    <div class="box" id="div3"><h1>3</h1></div>
+    <div class="box" id="div4"><h1>4</h1></div>
+</div>
+
+<button id="startBtn">Start Animation</button>
+
+</body>
+</html>
