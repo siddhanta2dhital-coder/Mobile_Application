@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Firebase Realtime DB CRUD</title>
+</head>
+<body>
+
+  <h1>Firebase Realtime Database CRUD</h1>
+
+  <!-- CREATE USER -->
+  <h2>Create / Write User</h2>
+
+  <input type="text" id="create-id" placeholder="User ID" /><br><br>
+  <input type="text" id="create-name" placeholder="Name" /><br><br>
+  <input type="email" id="create-email" placeholder="Email" /><br><br>
+  <input type="number" id="create-age" placeholder="Age" /><br><br>
+  <input type="text" id="create-phone" placeholder="Phone" /><br><br>
+  <input type="text" id="create-address" placeholder="Address" /><br><br>
+  <input type="text" id="create-city" placeholder="City" /><br><br>
+  <input type="text" id="create-country" placeholder="Country" /><br><br>
+  <input type="text" id="create-gender" placeholder="Gender" /><br><br>
+  <input type="text" id="create-occupation" placeholder="Occupation" /><br><br>
+
+  <button onclick="handleCreateUser()">Write User</button>
+
+  <hr>
+
+  <!-- READ USERS -->
+  <h2>Read Users</h2>
+  <button onclick="readUser()">Read All Users (Check Console)</button>
+
+  <hr>
+
+  <!-- UPDATE USER -->
+  <h2>Update User</h2>
+
+  <input type="text" id="update-id" placeholder="User ID" /><br><br>
+  <input type="text" id="update-name" placeholder="New Name" /><br><br>
+  <input type="email" id="update-email" placeholder="New Email" /><br><br>
+
+  <button onclick="handleUpdateUser()">Update User</button>
+
+  <hr>
+
+  <!-- DELETE USER -->
+  <h2>Delete User</h2>
+  <input type="text" id="delete-id" placeholder="User ID" /><br><br>
+  <button onclick="handleDeleteUser()">Delete User</button>
+
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
